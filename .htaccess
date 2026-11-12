@@ -1,0 +1,9 @@
+# KopiKita – konfigurasi Apache
+Options -Indexes
+DirectoryIndex index.php
+ErrorDocument 404 /kopikita/404.php
+ErrorDocument 403 /kopikita/403.php
+
+<FilesMatch "\.(md|sql|log|ini)$">
+    Require all denied
+</FilesMatch>
