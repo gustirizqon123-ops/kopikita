@@ -593,3 +593,7 @@ select.form-control { appearance: none; background-image: linear-gradient(45deg,
   .nav-actions .btn-signin span[aria-hidden] { display: none; }
   .icon-btn { width: 36px; height: 36px; }
 }
+
+/* Keranjang: dropdown ukuran tidak menimpa teks; gambar sejajar atas */
+.cart-item { align-items: start; }
+.cart-item .opts select { min-width: 168px; padding-right: 36px; }
