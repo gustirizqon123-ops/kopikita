@@ -28,7 +28,7 @@ require __DIR__ . '/../includes/header.php';
                 <thead><tr><th>Item</th><th class="num">Qty</th><th class="num">Subtotal</th></tr></thead>
                 <tbody>
                 <?php foreach ($order['items'] as $it): ?>
-                    <tr><td><?= e($it['product_name']) ?> <small class="text-muted"><?= e(size_label($it['size'])) ?></small></td>
+                    <tr><td><?= e($it['product_name']) ?> <?= $it['size'] ? '<small class="text-muted">' . e(size_label($it['size'])) . '</small>' : '' ?></td>
                         <td class="num"><?= (int) $it['quantity'] ?></td><td class="num"><?= e(rupiah($it['line_total'])) ?></td></tr>
                 <?php endforeach; ?>
                 </tbody>

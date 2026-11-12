@@ -88,7 +88,8 @@ require __DIR__ . '/../includes/header.php';
                 <?php foreach ($res['items'] as $it): ?>
                     <div class="ci">
                         <div><?= (int) $it['qty'] ?>× <?= e($it['name']) ?>
-                            <small><?= e(size_label($it['size'])) ?><?= $it['notes'] ? ' · ' . e($it['notes']) : '' ?></small></div>
+                            <?php $meta = array_filter([$it['size'] ? size_label($it['size']) : '', $it['notes']]); ?>
+                            <?php if ($meta): ?><small><?= e(implode(' · ', $meta)) ?></small><?php endif; ?></div>
                         <span><?= e(rupiah($it['line_total'])) ?></span>
                     </div>
                 <?php endforeach; ?>

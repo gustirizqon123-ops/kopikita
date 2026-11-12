@@ -94,12 +94,14 @@ require __DIR__ . '/includes/header.php';
             <p class="auth-foot">Belum punya akun? <a href="<?= e(url('register.php')) ?>">Daftar sebagai pelanggan</a></p>
             <p class="auth-foot mt-0"><a href="<?= e(url('index.php')) ?>">← Kembali ke beranda</a></p>
 
+            <?php if (APP_DEBUG): // akun demo hanya tampil saat mode debug (lokal) ?>
             <div class="demo-accounts">
                 <strong class="text-cream">Akun demo:</strong><br>
                 Admin <code>admin</code> / <code>admin123</code> ·
                 Kasir <code>kasir</code> / <code>kasir123</code> ·
                 Pelanggan <code>pelanggan</code> / <code>pelanggan123</code>
             </div>
+            <?php endif; ?>
         </div>
     </div>
 </div>
